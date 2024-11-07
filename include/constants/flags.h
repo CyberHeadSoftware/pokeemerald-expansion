@@ -43,23 +43,23 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
+#define FLAG_INVERSE_BATTLE  	0x20 // If this flag is set, the battle's type effectiveness are inversed. For example, fire is super effective against water.
+#define FLAG_FORCE_DOUBLE_WILD  0x21 // If this flag is set, all land and surfing wild battles will be double battles.
+#define SMART_WILD_AI_FLAG      0x22 // If not 0, you can set this flag in a script to enable smart wild pokemon
+#define FLAG_NO_BAG_USE         0x23 // If this flag is set, the ability to use the bag in battle is disabled.
+#define FLAG_NO_CATCHING        0x24 // If this flag is set, the ability to catch wild Pokémon is disabled.
+#define FLAG_AI_VS_AI_BATTLE    0x25 // If this flag is set, the player's mons will be controlled by the ai next battles.
+#define FLAG_DYNAMAX_BATTLE     0x26 // If this flag is set, the ability to Dynamax in battle is enabled for all trainers.
+#define FLAG_TERA_ORB_CHARGED   0x27 // If this flag is set, the Tera Orb is charged. It is automatically set upon healing and cleared upon Terastallizing once configured.
+#define FLAG_TERA_ORB_NO_COST   0x28 // If this flag is set, the Tera Orb does not use up its charge upon Terastallization. In S/V, this occurs after an event with Terapagos.
+#define FLAG_SKY_BATTLE		    0x29 // If this flag has a value, the player will be able to engage in scripted Sky Battles.
+#define FLAG_EXP_SHARE		    0x2A // If this flag is set, every Pokémon in the party will gain experience, regardless if they participated in the battle or not.
+#define FLAG_PAUSE_TIME         0x2B // If this flag is set and OW_USE_FAKE_RTC is enabled, seconds on the in-game clock will not advance.
+#define FLAG_NO_ENCOUNTER       0x2C // If this flag is set, wild encounters will be disabled.
+#define FLAG_NO_TRAINER_SEE     0x2D // If this flag is set, trainers will not battle the player unless they're talked to.
+#define FLAG_NO_COLLISION       0x2E // If this flag is set, the player will be able to walk over tiles with collision. Mainly intended for debugging purposes.
+#define FLAG_FORCE_SHINY        0x2F // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
+#define FLAG_FORCE_NO_SHINY     0x30 // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
