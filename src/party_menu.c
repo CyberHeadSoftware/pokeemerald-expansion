@@ -7768,3 +7768,33 @@ void IsLastMonThatKnowsSurf(void)
             gSpecialVar_Result = !P_CAN_FORGET_HIDDEN_MOVE;
     }
 }
+
+void ItemUseCB_Pokeball(u8 taskId, TaskFunc task)
+{
+	struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 currBall = GetMonData(mon, MON_DATA_POKEBALL);
+	u16 newBall = gSpecialVar_ItemId;
+	static const u8 sText_MonBallChanged[] = _("{STR_VAR_1} now lives in a {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
+	
+	if (currBall == newBall)
+	{
+		gPartyMenuUseExitCallback = FALSE;
+		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = task;
+	}
+	else
+	{
+		GetMonNickname(mon, gStringVar1);
+		CopyItemName(newBall, gStringVar2);
+		PlaySE(SE_SELECT);
+		gPartyMenuUseExitCallback = TRUE;
+		SetMonData(mon, MON_DATA_POKEBALL, &newBall);
+		StringExpandPlaceholders(gStringVar4, sText_MonBallChanged);
+		DisplayPartyMenuMessage(gStringVar4, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = task;
+		RemoveBagItem(newBall, 1);
+		AddBagItem(currBall, 1); //If bag doesn't have space, old ball won't be added back
+	}
+}
