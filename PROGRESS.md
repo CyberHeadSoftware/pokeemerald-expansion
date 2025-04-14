@@ -11,16 +11,25 @@ Planned Features:
 		Make pokemon like/dislike/refuse certain balls
 	Second Options Page - https://github.com/pret/pokeemerald/wiki/Multipage-Options-Menu
 	Add more options - https://github.com/pret/pokeemerald/wiki/New-Options-Plus-‐-Multipage-Options-Menu-with-Faster-Text,-HP‐EXP-Bar-Speeds-and-Metric
-		Add frames		
+		Add frames
+		Add option to show pokemon types (battle.h)
 	Increase text speed - https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-15#post-10400198
 	Expand boxes
 	Add bag pockets - https://www.pokecommunity.com/threads/more-bag-pockets.424360/
 	Increase bag capacity
+	Dark tall grass
+	Sleep in bed to change time of day
 
 To Do:
 	Change NPC text to reflect config updates
-	Make pokemon follower optional
+	Change move/ability descriptions to reflect config updates (if needed)
+	Make pokemon follower optional (using flag)
 	Fix Z moves to work properly with B button
+	Change Libero ability to only change once, leave Protean changing constantly
+	Check new battle backgrounds, decide whether to use them
+	Test both overworld map name popups
+	Scatterbug form depending on map
+	Add NPC text about ev/iv, set summary_screen flag
 	
 
 Credits:

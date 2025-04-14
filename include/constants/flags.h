@@ -43,54 +43,54 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_INVERSE_BATTLE      0x20 // If this flag is set, the battle's type effectiveness are inversed. For example, fire is super effective against water.
+#define FLAG_FORCE_DOUBLE_WILD   0x21 // If this flag is set, all land and surfing wild battles will be double battles.
+#define SMART_WILD_AI_FLAG       0x22 // If not 0, you can set this flag in a script to enable smart wild pokemon
+#define FLAG_NO_BAG_USE          0x23 // If this flag is set, the ability to use the bag in battle is disabled.
+#define FLAG_NO_CATCHING         0x24 // If this flag is set, the ability to catch wild Pokémon is disabled.
+#define FLAG_NO_RUNNING          0x25 // If this flag is set, the ability to escape from wild battles is disabled. Also makes Roar/Whirlwind and Teleport (under Gen8) fail.
+#define FLAG_AI_VS_AI_BATTLE     0x26 // If this flag is set, the player's mons will be controlled by the ai next battles.
+#define FLAG_DYNAMAX_BATTLE      0x27 // If this flag is set, the ability to Dynamax in battle is enabled for all trainers.
+#define FLAG_TERA_ORB_CHARGED    0x28 // If this flag is set, the Tera Orb is charged. It is automatically set upon healing and cleared upon Terastallizing once configured.
+#define FLAG_TERA_ORB_NO_COST    0x29 // If this flag is set, the Tera Orb does not use up its charge upon Terastallization. In S/V, this occurs after an event with Terapagos.
+#define FLAG_SLEEP_CLAUSE        0x2A // If this flag is set, sleep clause is enabled; if the player / AI has already put a Pokémon on the opponent's side to sleep and it is still sleeping, another one can't be put to sleep. AI requires AI_FLAG_CHECK_BAD_MOVE to understand.
+#define FLAG_SKY_BATTLE          0x2B // If this flag has a value, the player will be able to engage in scripted Sky Battles.
+#define FLAG_EXP_SHARE           0x2C // If this flag is set, every Pokémon in the party will gain experience, regardless if they participated in the battle or not.
+#define FLAG_FOLLOWERS_DISABLED  0x2D // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
+#define FLAG_PAUSE_TIME          0x2E // If this flag is set and OW_USE_FAKE_RTC is enabled, seconds on the in-game clock will not advance.
+#define FLAG_NO_ENCOUNTER        0x2F // If this flag is set, wild encounters will be disabled.
+#define FLAG_NO_TRAINER_SEE      0x30 // If this flag is set, trainers will not battle the player unless they're talked to.
+#define FLAG_NO_COLLISION        0x31 // If this flag is set, the player will be able to walk over tiles with collision. Mainly intended for debugging purposes.
+#define FLAG_POKE_RIDER          0x32 // If this flag is set, the player will be able to use fly from the Pokenav Region Map and the Town Map key item by pressing 'R' on a city/location they are able to fly to.
+#define FLAG_UNION_ROOM_CHECK    0x33 // If this flag is set, the game will only check if players are in the Union Room while healing Pokémon, and not when players enter the Pokémon Center. This speeds up the loading of the Pokémon Center. This is ignored if OW_UNION_DISABLE_CHECK is TRUE.
+#define FLAG_FORCE_SHINY         0x34 // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
+#define FLAG_FORCE_NO_SHINY      0x35 // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
+#define FLAG_SUMMARY_IV_EV       0x36 // If this flag is set, will allow player to cycle through the Stats, IVs, and EVs in the summary screen skills page. Note: if P_SUMMARY_SCREEN_IV_EV_INFO is TRUE, this flag does nothing.
+#define FLAG_UNUSED_0x037        0x37 // Unused Flag
+#define FLAG_UNUSED_0x038        0x38 // Unused Flag
+#define FLAG_UNUSED_0x039        0x39 // Unused Flag
+#define FLAG_UNUSED_0x03A        0x3A // Unused Flag
+#define FLAG_UNUSED_0x03B        0x3B // Unused Flag
+#define FLAG_UNUSED_0x03C        0x3C // Unused Flag
+#define FLAG_UNUSED_0x03D        0x3D // Unused Flag
+#define FLAG_UNUSED_0x03E        0x3E // Unused Flag
+#define FLAG_UNUSED_0x03F        0x3F // Unused Flag
+#define FLAG_UNUSED_0x040        0x40 // Unused Flag
+#define FLAG_UNUSED_0x041        0x41 // Unused Flag
+#define FLAG_UNUSED_0x042        0x42 // Unused Flag
+#define FLAG_UNUSED_0x043        0x43 // Unused Flag
+#define FLAG_UNUSED_0x044        0x44 // Unused Flag
+#define FLAG_UNUSED_0x045        0x45 // Unused Flag
+#define FLAG_UNUSED_0x046        0x46 // Unused Flag
+#define FLAG_UNUSED_0x047        0x47 // Unused Flag
+#define FLAG_UNUSED_0x048        0x48 // Unused Flag
+#define FLAG_UNUSED_0x049        0x49 // Unused Flag
+#define FLAG_UNUSED_0x04A        0x4A // Unused Flag
+#define FLAG_UNUSED_0x04B        0x4B // Unused Flag
+#define FLAG_UNUSED_0x04C        0x4C // Unused Flag
+#define FLAG_UNUSED_0x04D        0x4D // Unused Flag
+#define FLAG_UNUSED_0x04E        0x4E // Unused Flag
+#define FLAG_UNUSED_0x04F        0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
